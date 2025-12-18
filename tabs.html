@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+    <style>
+        .content {
+            display: none;
+        }
+        .active {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <button class="tab active">Tab 1</button>
+    <button class="tab">Tab 2</button>
+    <button class="tab">Tab 3</button>
+    <div class="content" style="display: block;">
+        <h1>Tab 1</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta facilis laudantium placeat quia cum quis debitis deserunt dolorum doloremque, quaerat accusantium tempora sequi! Similique itaque minus, suscipit a doloremque ipsa?</p>
+    </div>
+    <div class="content">
+        <h1>Tab 2</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta facilis laudantium placeat quia cum quis debitis deserunt dolorum doloremque, quaerat accusantium tempora sequi! Similique itaque minus, suscipit a doloremque ipsa?</p>
+    </div>
+    <div class="content">
+        <h1>Tab 3</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta facilis laudantium placeat quia cum quis debitis deserunt dolorum doloremque, quaerat accusantium tempora sequi! Similique itaque minus, suscipit a doloremque ipsa?</p>
+    </div>
+
+    <script>
+
+        let tabs = document.querySelectorAll('.tab');
+        let contents = document.querySelectorAll('.content');
+        let length = tabs.length;
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener("click", () => {
+                contents.forEach(content => content.style.display = "none");
+                contents[index].style.display = "block";
+                tabs.forEach(tab => tab.classList.remove("active"));
+                tab.classList.add("active");
+            })
+        });
+
+        // let tabActive = 1;
+        // let tab1 = document.querySelector("#tab-1");
+        // let tab2 = document.querySelector("#tab-2");
+        // let tab3 = document.querySelector("#tab-3");
+        // let content1 = document.querySelector("#content-1");
+        // let content2 = document.querySelector("#content-2");
+        // let content3 = document.querySelector("#content-3");
+        // let content = document.querySelectorAll(".content");
+
+        // tab1.addEventListener("click", () => {
+        //     for (let i = 0; i < 3; i ++){
+        //         content[i].style.display = "none";
+        //     }
+        //     content1.style.display = "block";
+        // })
+        // tab2.addEventListener("click", () => {
+        //     for (let i = 0; i < 3; i ++){
+        //         content[i].style.display = "none";
+        //     }
+        //     content2.style.display = "block";
+        // })
+        // tab3.addEventListener("click", () => {
+        //     for (let i = 0; i < 3; i ++){
+        //         content[i].style.display = "none";
+        //     }
+        //     content3.style.display = "block";
+        // })
+    </script>
+</body>
+</html>

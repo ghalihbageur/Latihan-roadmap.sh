@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, *::after, *::before {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: black;
+            color: white;
+        }
+        h4,p {
+            margin: 0;
+            padding: 0;
+        }
+        .card-1 .bubble {
+            background-color: navy;
+            padding: 1rem;
+            border-radius: 20px;
+            position: relative;
+            border: 2px solid white;
+        }
+        .card-1 .bubble::after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            background-color: navy;
+            bottom: -11px;
+            left: 20px;
+            transform: rotate(-45deg);
+            border-bottom-left-radius: 4px;
+            border-left: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+        .card-1 .profile {
+            display: grid;
+            grid-template-areas: 
+            "picture name"
+            "picture position"
+            ;
+            place-content: start;
+            column-gap: 10px;
+            margin-top: 20px;
+        }
+        .card-1 h4 {
+            align-self: flex-end;
+        }
+        .card-1 .picture {
+            background-color: white;
+            height: 60px;
+            width: 60px;
+            border-radius: 100%;
+        }
+
+        .card-2 {
+            margin-top: 20px;
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 24px;
+        }
+
+        .card-2 .profile {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+        }
+
+        .card-2 .picture {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card-2 .face {
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+            border-radius: 100px;
+            opacity: 0.5;
+        }
+
+        .card-2 .face.active{
+            width: 40px;
+            height: 40px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-1">
+        <div class="bubble">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae sit, autem vel placeat delectus aliquid ipsam quod nulla recusandae tenetur consequatur voluptatum iste, quis, ullam dolorum cum culpa
+            <br><br> reiciendis earum?
+        </div>
+        <div class="profile">
+            <div class="picture" style="grid-area: picture;"></div>
+            <h4 style="grid-area: name;">Wenning Ghalih</h4>
+            <p style="grid-area: position;">Junior Frontend Developer</p>
+        </div>
+    </div>
+
+    <div class="card-2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate in inventore tempora odio? Amet molestias perferendis eos, numquam, dolores iusto in explicabo perspiciatis enim adipisci doloribus debitis est libero nam.</p>
+        <div class="profile">
+            <div class="picture">
+                <img src="img/arrow_back_ios_24dp_E3E3E3.svg" alt="">
+                <img src="img/orang.jpg" class="face" alt="">
+                <img src="img/orang.jpg" class="face active" alt="">
+                <img src="img/orang.jpg" class="face" alt="">
+                <img src="img/arrow_back_ios_24dp_E3E3E3.svg" style="transform: rotate(180deg);" alt="">
+            </div>
+            <h4>Wenning Ghalih</h4>
+        </div>
+    </div>
+</body>
+</html>

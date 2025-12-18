@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Acordion</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .card {
+            border: 1px solid black;
+            width: 100%;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 10px;
+        }
+        .card p{
+            margin-top: -15px;
+            opacity: 0;
+            transition: all 100ms;
+        }
+        .card.active p {
+            margin-top: 10px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <button class="card">
+        <h4>Apakah Ikan Berenang?</h4>
+        <p>Ya, ikan beranang</p>
+    </button>
+    <button class="card">
+        <h4>Apakah Ayam Berenang?</h4>
+        <p>Tidak, ayam tidak beranang</p>
+    </button>
+    <button class="card">
+        <h4>Apakah Burung Berenang?</h4>
+        <p>Tidak, burung tidak beranang</p>
+    </button>
+
+    <script>
+        let cards = document.querySelectorAll(".card");
+        console.log(cards)
+
+        cards.forEach(card => {
+            card.addEventListener("click", () => {
+                if (card.classList.contains("active")) {
+                    card.classList.remove("active");
+                } else {
+                    cards.forEach(card => {
+                        card.classList.remove("active");
+                    })
+                    card.classList.add("active");
+                }
+            })
+        });
+    </script>
+</body>
+</html>
